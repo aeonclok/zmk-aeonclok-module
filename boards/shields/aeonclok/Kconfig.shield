@@ -1,0 +1,5 @@
+config SHIELD_AEONCLOK_LEFT
+    def_bool $(shields_list_contains,aeonclok_left)
+
+config SHIELD_AEONCLOK_RIGHT
+    def_bool $(shields_list_contains,aeonclok_right)

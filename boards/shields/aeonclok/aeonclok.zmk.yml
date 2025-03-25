@@ -1,0 +1,14 @@
+file_format: "1"
+id: aeonclok
+name: aeonclok
+type: shield
+url: https://github.com/aeonclok/zmk-aeonclok-module
+requires: [pro_micro]
+exposes:
+  - i2c_glidepoint
+features:
+  - keys
+  - pointer
+siblings:
+  - aeonclok_left
+  - aeonclok_right
