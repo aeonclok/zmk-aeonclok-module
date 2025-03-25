@@ -28,8 +28,21 @@
     };
 };
 
-
-
 &default_transform {
     col-offset = <5>;
+};
+
+&pro_micro_i2c {
+    status = "okay";
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+    };
+};
+
+// Overrides for the input listener node
+&glidepoint_listener {
+    status = "okay";
+    device = <&glidepoint>;
 };
