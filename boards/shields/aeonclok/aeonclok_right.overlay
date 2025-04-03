@@ -41,9 +41,9 @@
         status = "okay";
         dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>; // DR pin assigned to D1, like nice!view CS pin
 
-        sensitivity = "4x";
+        sensitivity = "2x";
         sleep;
-        y-invert;
+        no-taps;
     };
 };
 

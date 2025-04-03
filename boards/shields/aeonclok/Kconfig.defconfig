@@ -1,22 +1,22 @@
-if SHIELD_AOENCLOK_RIGHT
+if SHIELD_AEONCLOK_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "Aeon Clok"
+    default "Aeon Clik"
 
 config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_AEONCLOK_LEFT || SHIELD_AEONCLOK_RIGHT
+
+config ZMK_SPLIT
     default y
 
 config ZMK_POINTING
     default y
 
 config I2C
-    default y
-
-endif
-
-if SHIELD_AOENCLOK_LEFT || SHIELD_AOENCLOK_RIGHT
-
-config ZMK_SPLIT
     default y
 
 endif
