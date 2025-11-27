@@ -1,0 +1,12 @@
+file_format: "1"
+id: tuuveitwo
+name: tuuveitwo
+type: shield
+url: https://splitkb.com/products/aurora-sweep-pcb-kit
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+siblings:
+  - tuuveitwo_left
+  - tuuveitwo_right

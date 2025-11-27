@@ -1,0 +1,48 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "tuuveitwo.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &kscan;
+    };
+
+    kscan: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
+
+        diode-direction = "row2col";
+
+        row-gpios = 
+            <&pro_micro 10 GPIO_ACTIVE_HIGH>  // PB6
+          , <&pro_micro 16 GPIO_ACTIVE_HIGH>  // PB2
+          , <&pro_micro 14 GPIO_ACTIVE_HIGH>  // PB3
+          , <&pro_micro 15 GPIO_ACTIVE_HIGH>  // PB1
+          , <&pro_micro 21 GPIO_ACTIVE_HIGH>  // PF7
+          , <&pro_micro 19 GPIO_ACTIVE_HIGH>  // PF5
+          ;
+
+        col-gpios = 
+            <&pro_micro 9  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PB5
+          , <&pro_micro 8  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PB4
+          , <&pro_micro 20 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PF6
+          , <&pro_micro 6  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PD7
+          , <&pro_micro 5  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PC6
+          , <&pro_micro 4  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PD4
+          , <&pro_micro 0  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PD2
+          , <&pro_micro 1  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PD3
+          , <&pro_micro 18 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PF4
+          , <&pro_micro 7  (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>  // PE6
+          ;
+    };
+};
+
+&left_encoder {
+    status = "okay";
+};
+
+
