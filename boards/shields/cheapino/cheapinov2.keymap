@@ -1,0 +1,38 @@
+//     ___ _                      _
+//    / __\ |___  ___  __ _ _ __ (_)_ ___  ____
+//   / /  | '_  \/ _ \/ _` | '_ \| | '_  \/ _  \
+//  / /___| | | |  __/ (_| | |_) | | | | | (_) |
+//  \____/|_| |_|\___|\__,_| .__/|_|_| |_|\___/
+//                         |_|
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#define BASE 0
+
+&mt {
+  quick-tap-ms = <150>;
+  global-quick-tap;
+  flavor = "tap-preferred";
+  tapping-term-ms = <250>;
+  require-prior-idle-ms = <150>;
+  hold-trigger-on-release;
+};
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS BACKSPACE>;
+};
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+        BASE {
+          bindings = <
+          &kp Q &kp W &kp F &kp P &kp B &kp J &kp L &kp U &kp Y &kp SEMICOLON
+          &mt LEFT_GUI A &mt LEFT_ALT R &mt LEFT_CONTROL S &mt LEFT_SHIFT T &kp G &kp M &mt LEFT_SHIFT N &mt LEFT_CONTROL E &mt LEFT_ALT I &mt LEFT_GUI O
+          &kp Z &kp X &kp C &kp D &lt 5 V &lt 1 K &kp H &kp COMMA &kp DOT &kp SLASH
+          &lt 6 ESCAPE &lt 3 SPACE &lt 5 TAB &lt 1 DELETE &lt 2 BACKSPACE &lt 4 ENTER
+          >;
+        };
+    };
+};
