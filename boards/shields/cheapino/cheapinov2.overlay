@@ -1,1 +1,29 @@
 #include "cheapinov2.dtsi"
+// DISABLE board features to free up pins for the matrix
+
+&uart0 {
+    status = "disabled";
+};
+
+&i2c0 {
+    status = "disabled";
+};
+
+&i2c1 {
+    status = "disabled";
+};
+
+&spi0 {
+    status = "disabled";
+};
+
+&adc {
+    status = "disabled";
+};
+
+// The definition you copied tries to use the RGB LED as a simple
+// single-color LED on Pin 16. This won't work for a WS2812 Neopixel
+// and might interfere, so let's kill it for now.
+&led {
+    status = "disabled";
+};

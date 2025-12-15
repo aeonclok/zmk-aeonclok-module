@@ -1,0 +1,34 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+CONFIG_SOC_SERIES_RP2XXX=y
+CONFIG_SOC_RP2040=y
+CONFIG_BOARD_WAVESHARE_RP2040_ZERO=y
+
+CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC=125000000
+CONFIG_RESET=y
+
+# Enable GPIO
+CONFIG_GPIO=y
+
+# --- SERIAL (Keep this enabled!) ---
+# Required for USB Logging and debugging
+CONFIG_SERIAL=y
+CONFIG_UART_INTERRUPT_DRIVEN=y
+CONFIG_CONSOLE=y
+CONFIG_UART_CONSOLE=y
+CONFIG_UART_LINE_CTRL=y
+
+# --- USB STACK (The missing piece) ---
+# This turns the generic chip into a Keyboard
+CONFIG_USB_DEVICE_STACK=y
+CONFIG_USB_DEVICE_HID=y
+CONFIG_USB_DEVICE_INITIALIZE_AT_BOOT=y
+CONFIG_USB_DC_RPI_PICO=y
+CONFIG_ZMK_USB=y
+
+# Code partition needed to target the correct flash range
+CONFIG_USE_DT_CODE_PARTITION=y
+
+# Output UF2 by default
+CONFIG_BUILD_OUTPUT_UF2=y
